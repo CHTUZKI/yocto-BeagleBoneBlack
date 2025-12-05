@@ -1,0 +1,15 @@
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = https://github.com/openembedded/meta-openembedded.git
+[submodule "meta-qt6"]
+	path = meta-qt6
+	url = https://code.qt.io/yocto/meta-qt6.git
+[submodule "meta-security"]
+	path = meta-security
+	url = https://git.yoctoproject.org/git/meta-security
+[submodule "poky"]
+	path = poky
+	url = https://github.com/yoctoproject/poky.git
+[submodule "meta-bbb"]
+	path = meta-bbb
+	url = https://github.com/jumpnow/meta-bbb.git
