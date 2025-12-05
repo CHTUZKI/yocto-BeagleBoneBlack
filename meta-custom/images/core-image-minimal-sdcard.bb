@@ -2,7 +2,7 @@ SUMMARY = "A minimal console image for SD card boot on AM3359 boards"
 
 LICENSE = "MIT"
 
-inherit core-image
+inherit core-image extrausers
 
 # 最小系统核心组件
 # core-image类会自动包含packagegroup-core-boot，这里只添加必要的额外组件
@@ -54,8 +54,22 @@ IMAGE_INSTALL += " \
     ldconfig \
 "
 
+# sudo和passwd命令
+IMAGE_INSTALL += " \
+    sudo \
+    shadow \
+"
+
 # 时区设置
 IMAGE_INSTALL += "tzdata"
+
+# 设置root密码为"root"
+# 密码哈希使用sha256crypt算法生成
+ROOT_PASSWORD_HASH = "\$6\$EGCf7+R9\$vNHeKnD9PDPaKT0XlOjvE5Tai2e3W1Tanfie5uYILMyt7qUrwm2zbSOKXLTakhkJUnaHKSqBwqdx7IG03Mons."
+
+EXTRA_USERS_PARAMS = " \
+    usermod -p '${ROOT_PASSWORD_HASH}' root; \
+"
 
 # 设置本地时区
 set_local_timezone() {
