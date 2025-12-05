@@ -1,0 +1,43 @@
+# Yocto Project build artifacts
+build*/
+tmp/
+downloads/
+sstate-cache/
+cache/
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Patch files (uncomment if you don't want to track patches)
+# *.patch
+# *.diff
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.orig
+*.rej
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build logs
+*.log
+bitbake-cookerdaemon.log
+
+# Toaster
+toaster.sqlite
+_toaster_clones/
+
+# Documentation builds
+/documentation/*/eclipse/
+/documentation/*/*.html
+/documentation/*/*.pdf
+/documentation/*/*.tgz
+
